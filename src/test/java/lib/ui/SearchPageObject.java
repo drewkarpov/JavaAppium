@@ -1,6 +1,7 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
+import lib.Platform;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -28,6 +29,7 @@ abstract public class SearchPageObject extends MainPageObject {
         return SEARCH_RESULT_WITH_SUBSTRING_TML.replace("{SUBSTRING}", substring);
     }
     private static String getResultSearchElementByTitleAndDescription(String substring,String secondSubstring) {
+
         return SEARCH_ITEM_TITLE_AND_DESCRIPTION_TML.replace("{SUBSTRING}", substring).replace("{SECOND_SUBSTRING}",secondSubstring);
     }
 
@@ -59,7 +61,7 @@ abstract public class SearchPageObject extends MainPageObject {
         this.waitForElementPresent(searchResultXpath, "Cannot find search result with substring " + substing);
     }
     public void waitForSearchResultByTitleAndDescription(String substing,String secondSubstring) {
-        String searchResultXpath = getResultSearchElementByTitleAndDescription(substing,secondSubstring);
+        String searchResultXpath = getResultSearchElementByTitleAndDescription(substing ,secondSubstring);
         this.waitForElementPresent(searchResultXpath, "Cannot find search result with title or description");
     }
 
@@ -108,4 +110,7 @@ abstract public class SearchPageObject extends MainPageObject {
         this.assertElementPresent(SEARCH_ITEM_TITLE_TEXT);
     }
 
+    public  String getArticleText() {
+      return  this.waitForElementAndGetText(SEARCH_ITEM_TITLE_TEXT,"",4);
+    }
 }

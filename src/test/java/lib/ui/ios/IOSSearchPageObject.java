@@ -15,8 +15,8 @@ public class IOSSearchPageObject extends SearchPageObject {
         SEARCH_RESULT_ELEMENT = "xpath://XCUIElementTypeLink";
         SEARCH_EMPTY_RESULT_ELEMENT = "xpath://*[@name='No results found']";
         SEARCH_ITEM_TITLE = "xpath://XCUIElementTypeLink";
-        SEARCH_ITEM_TITLE_AND_DESCRIPTION_TML = "xpath://XCUIElementTypeLink[contains(@text,'{SUBSTRING}')]/../xpath://XCUIElementTypeLink[contains(@text,'{SECOND_SUBSTRING}')]";
-        SEARCH_ITEM_TITLE_TEXT = "id:org.wikipedia:id/view_page_title_text";
+        SEARCH_ITEM_TITLE_AND_DESCRIPTION_TML = "xpath://XCUIElementTypeLink[contains(@name,'{SUBSTRING}')]/../XCUIElementTypeLink[contains(@name,'{SECOND_SUBSTRING}')]";
+        SEARCH_ITEM_TITLE_TEXT = "xpath://XCUIElementTypeLink";
         SEARCH_EMPTY_MESSAGE = "id:org.wikipedia:id/search_empty_message";
     }
 }

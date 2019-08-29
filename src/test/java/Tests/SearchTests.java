@@ -24,6 +24,7 @@ public class SearchTests extends CoreTestCase {
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine(request);
+        String kek = searchPageObject.getArticleText();
         searchPageObject.waitForSearchResultByTitleAndDescription(
                 title,
                 description);
