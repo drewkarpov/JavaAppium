@@ -49,7 +49,8 @@ public class MyListsTests extends CoreTestCase {
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine(searchValue);
         String firstArticleName = "Object-oriented programming language";
-        String secondArticleName = "Programming language";
+        String secondArticleName = "JavaScript";
+        String secondArticleDescription = "Programming language";
         searchPageObject.clickByArticleWithSubstring(firstArticleName);
         ArticlePageObject articlePageObject = ArticlePageObjectFactrory.get(driver);
         articlePageObject.waitForTitleElement();
@@ -58,13 +59,13 @@ public class MyListsTests extends CoreTestCase {
             articlePageObject.addArticleToMyList(nameOfFolder);
         } else {
             articlePageObject.addArticlesToMySaved();
+            articlePageObject.closeHintUntilAddArticle();
         }
         articlePageObject.closeArticle();
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine(searchValue);
         searchPageObject.clickByArticleWithSubstring(secondArticleName);
         articlePageObject.waitForTitleElement();
-        String secondArticleTitle = articlePageObject.getArticleTitle();
         if(Platform.getInstance().isAndroid()){
             articlePageObject.addArticleToMyList(nameOfFolder);
         } else {
@@ -78,6 +79,6 @@ public class MyListsTests extends CoreTestCase {
             myListsPageObject.openFoderByName(nameOfFolder);
         }
         myListsPageObject.swipeByArticleToDelete(firstArticleTitle);
-        myListsPageObject.assertArticleIsExist(secondArticleTitle);
+        myListsPageObject.assertArticleIsExist(secondArticleDescription);
     }
 }

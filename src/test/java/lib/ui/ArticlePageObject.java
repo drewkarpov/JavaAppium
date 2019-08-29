@@ -115,14 +115,14 @@ abstract public class ArticlePageObject extends MainPageObject {
 
     }
 
+    public void closeHintUntilAddArticle(){
+        this.waitForElementAndClick(
+                CLOSE_HINT_UNTIL_ADD_ARTICLE,
+                "Cannot hint article, cannot find X link",
+                5
+        );
+    }
     public void closeArticle() {
-        if(Platform.getInstance().isIOS()){
-            this.waitForElementAndClick(
-                    CLOSE_HINT_UNTIL_ADD_ARTICLE,
-                    "Cannot hint article, cannot find X link",
-                    5
-            );
-        }
         this.waitForElementAndClick(
                 CLOSE_ARTICLE_BUTTON,
                 "Cannot close article, cannot find X link",

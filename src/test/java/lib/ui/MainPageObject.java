@@ -46,7 +46,6 @@ public class MainPageObject {
         element.click();
         return element;
     }
-
     public int waitForElementAndgetItemListSize(String locator, String error_message, long timeoutInSeconds) {
         By by = this.getLocatorStringByString(locator);
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
