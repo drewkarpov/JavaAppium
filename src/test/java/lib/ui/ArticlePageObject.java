@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import lib.Platform;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 abstract public class ArticlePageObject extends MainPageObject {
     protected static String
@@ -11,6 +12,7 @@ abstract public class ArticlePageObject extends MainPageObject {
             FOOTER_ELEMENT,
             OPTIONS_BUTTON,
             OPTIONS_ADD_TO_MY_LIST_BUTTON,
+            OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
             ADD_TO_MY_LIST_OVERLAY,
             MY_LIST_NAME_INPUT,
             MY_LIST_OK_BUTTON,
@@ -19,7 +21,7 @@ abstract public class ArticlePageObject extends MainPageObject {
             CLOSE_ARTICLE_BUTTON;
 
 
-    public ArticlePageObject(AppiumDriver driver) {
+    public ArticlePageObject(RemoteWebDriver driver) {
         super(driver);
     }
 
@@ -31,18 +33,34 @@ abstract public class ArticlePageObject extends MainPageObject {
         WebElement titleElement = waitForTitleElement();
         if (Platform.getInstance().isAndroid()) {
             return titleElement.getAttribute("text");
-        } else {
+        } else if (Platform.getInstance().isIOS()){
             return titleElement.getAttribute("name");
+        } else {
+            return titleElement.getText();
         }
 
     }
+    public void removeArticleFromSaveAdded(){
+        if(this.isElementPresent(OPTIONS_REMOVE_FROM_MY_LIST_BUTTON)){
+            this.waitForElementAndClick(OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
+                    "Cannot click button to remove Article from saved",5);
+            this.waitForElementPresent(
+                    OPTIONS_ADD_TO_MY_LIST_BUTTON,
+                    "Cannot find button to add an article to saved list after removing it from this list before",6);
+        }
+    }
+
+
 
     public void swipeToFooter() {
         if (Platform.getInstance().isAndroid()) {
             this.swipeUpToElement(FOOTER_ELEMENT,
                     "Cannot find the end of Article", 20);
-        } else {
+        } else if(Platform.getInstance().isIOS()){
             this.swipeUpTillElementAppear(FOOTER_ELEMENT,
+                    "Cannot find the end of Article", 40);
+        } else {
+            this.scrollWebPageTillElementNotVisible(FOOTER_ELEMENT,
                     "Cannot find the end of Article", 40);
         }
     }
@@ -123,14 +141,20 @@ abstract public class ArticlePageObject extends MainPageObject {
         );
     }
     public void closeArticle() {
+        if(Platform.getInstance().isIOS() || Platform.getInstance().isAndroid()){
         this.waitForElementAndClick(
                 CLOSE_ARTICLE_BUTTON,
                 "Cannot close article, cannot find X link",
                 5
-        );
+        );} else {
+            System.out.println("Method closeArticle()  do nothing for platform" +Platform.getInstance().getPlatformVar());
+        }
     }
 
     public void addArticlesToMySaved() {
+        if(Platform.getInstance().isMobileWeb()){
+            this.removeArticleFromSaveAdded();
+        }
         this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST_BUTTON, "Cannot find opion to add article to reading list", 10);
     }
 

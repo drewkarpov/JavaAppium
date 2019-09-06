@@ -3,6 +3,7 @@ package lib.ui;
 import io.appium.java_client.AppiumDriver;
 import lib.Platform;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ abstract public class SearchPageObject extends MainPageObject {
             SEARCH_EMPTY_MESSAGE ;
 
 
-    public SearchPageObject(AppiumDriver driver) {
+    public SearchPageObject(RemoteWebDriver driver) {
         super(driver);
     }
 
@@ -35,6 +36,8 @@ abstract public class SearchPageObject extends MainPageObject {
 
     public void initSearchInput() {
         this.waitForElementPresent(SEARCH_INIT_ELEMENT, "Cannot find search Wikipedia input after clicking search init element", 5);
+        this.waitForElementAndClick(SEARCH_INIT_ELEMENT, "Cannot find search Wikipedia input after clicking search init element", 5);
+
     }
 
     public void typeSearchLine(String searchLine) {
