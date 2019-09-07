@@ -39,7 +39,7 @@ public class Platform {
         } else if (isIOS()){
             return new IOSDriver(url ,getIOSDesiredCapabilities());
         } else if (isMobileWeb()) {
-            System.setProperty("webdriver.chrome.driver" ,  "/Users/designer/Desktop/AppiumJava/JavaAppium/drivers/chromedriver 2");
+           // System.setProperty("webdriver.chrome.driver" ,  "/Users/designer/Desktop/AppiumJava/JavaAppium/drivers/chromedriver 2");
             return new ChromeDriver(getMobileWebChromeOptions());
         }
         else{
