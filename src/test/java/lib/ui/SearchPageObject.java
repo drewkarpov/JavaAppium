@@ -53,6 +53,7 @@ abstract public class SearchPageObject extends MainPageObject {
         this.waitForElementPresent(SEARCH_ITEM_TITLE, "Cannot find item in search list", 5);
     }
     public int getCountOfItemsByTitle(){
+        this.waitForItemsBySearch();
       return   this.waitForElementAndgetItemListSize(SEARCH_ITEM_TITLE,"Cannot find item in search list",7);
     }
     public List<WebElement> listOfSearchItems(){
@@ -64,8 +65,10 @@ abstract public class SearchPageObject extends MainPageObject {
         this.waitForElementPresent(searchResultXpath, "Cannot find search result with substring " + substing);
     }
     public void waitForSearchResultByTitleAndDescription(String substing,String secondSubstring) {
-        String searchResultXpath = getResultSearchElementByTitleAndDescription(substing ,secondSubstring);
-        this.waitForElementPresent(searchResultXpath, "Cannot find search result with title or description");
+        if (!Platform.getInstance().isMobileWeb()) {
+            String searchResultXpath = getResultSearchElementByTitleAndDescription(substing, secondSubstring);
+            this.waitForElementPresent(searchResultXpath, "Cannot find search result with title or description");
+        }
     }
 
 
