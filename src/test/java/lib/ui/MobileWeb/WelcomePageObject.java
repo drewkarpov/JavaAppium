@@ -1,10 +1,11 @@
-package lib.ui;
+package lib.ui.MobileWeb;
 
 import io.appium.java_client.AppiumDriver;
+import lib.ui.MainPageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class WelcomePageObject extends MainPageObject{
+public class WelcomePageObject extends MainPageObject {
 
     private static final String
     STEP_LEARN_MORE_LINK ="xpath://*[@name='Learn more about Wikipedia']",

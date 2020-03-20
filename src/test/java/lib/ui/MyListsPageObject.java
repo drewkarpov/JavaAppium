@@ -24,7 +24,7 @@ abstract public class MyListsPageObject extends MainPageObject {
     private static String getRemoveButtonByTitle(String articleTitle){
         return REMOVE_FROM_SAVED_BUTTON.replace("{TITLE}",articleTitle);
     }
-    public void openFoderByName(String nameOfFolder){
+    public void openFolderByName(String nameOfFolder){
         String folderNameByXpath = getFolderXpathByName(nameOfFolder);
         this.waitForElementPresent(
                 folderNameByXpath,

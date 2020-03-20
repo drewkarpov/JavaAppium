@@ -2,8 +2,6 @@ package Tests;
 
 import lib.CoreTestCase;
 import lib.factories.ArticlePageObjectFactrory;
-import lib.factories.SearchPageObjectFactory;
-import lib.ui.ArticlePageObject;
 import org.junit.Test;
 
 public class ArticleTests extends CoreTestCase {
@@ -13,9 +11,8 @@ public class ArticleTests extends CoreTestCase {
         searchPage().initSearchInput();
         searchPage().typeSearchLine("Java");
         searchResultPage().clickByArticleWithSubstring("bject-oriented programming language");
-        ArticlePageObject articlePageObject = ArticlePageObjectFactrory.get(driver);
-        articlePageObject.waitForTitleElement();
-        String article_title = articlePageObject.getArticleTitle();
+        articlePage().waitForTitleElement();
+        String article_title = articlePage().getArticleTitle();
         assertEquals("We see unexpected title", "Java (programming language)", article_title);
     }
     @Test
@@ -24,9 +21,8 @@ public class ArticleTests extends CoreTestCase {
         searchPage().initSearchInput();
         searchPage().typeSearchLine("Java");
         searchResultPage().clickByArticleWithSubstring("bject-oriented programming language");
-        ArticlePageObject articlePageObject = ArticlePageObjectFactrory.get(driver);
-        articlePageObject.waitForTitleElement();
-        articlePageObject.swipeToFooter();
+        articlePage().waitForTitleElement();
+        articlePage().swipeToFooter();
     }
 
 }

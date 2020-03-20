@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47612bef-2ba0-4af0-b523-2254ae549f22" name="Default Changelist" comment="add interface for navigation">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lib/factories/SearchResultPageObjectFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lib/ui/MobileWeb/MWSearchResultPageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidSearchResultPageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lib/ui/interfaces/ISearchMenuPageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lib/ui/interfaces/ISearchResultPageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lib/ui/ios/IOSSearchResultPageObject.java" afterDir="false" />
+    <list default="true" id="47612bef-2ba0-4af0-b523-2254ae549f22" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/lib/ui/interfaces/IArticlePageObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ArticleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ArticleTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ChangeAppConditionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ChangeAppConditionTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/GetStartedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/GetStartedTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/MyListsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/MyListsTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/SearchTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/factories/SearchPageObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/factories/SearchPageObjectFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/MobileWeb/MWSearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/MobileWeb/MWSearchPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/SearchPageObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidSearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidSearchPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/ios/IOSSearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/ios/IOSSearchPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/factories/ArticlePageObjectFactrory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/factories/ArticlePageObjectFactrory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/ArticlePageObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/MobileWeb/MWArticlePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/MobileWeb/MWArticlePageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/MyListsPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/MyListsPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/WelcomePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/MobileWeb/WelcomePageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidArticlePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidArticlePageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/ios/IOSArticlePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/ios/IOSArticlePageObject.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -186,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584696580929</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add interface for search">
+      <created>1584712220205</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584712220205</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,7 +208,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lesson 8 ex 17" />
     <MESSAGE value="add interface for navigation" />
-    <option name="LAST_COMMIT_MESSAGE" value="add interface for navigation" />
+    <MESSAGE value="add interface for search" />
+    <option name="LAST_COMMIT_MESSAGE" value="add interface for search" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
