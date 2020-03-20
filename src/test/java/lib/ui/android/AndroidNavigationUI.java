@@ -2,7 +2,7 @@ package lib.ui.android;
 
 import lib.Platform;
 import lib.ui.MainPageObject;
-import lib.ui.interfaces.INavigationUI;
+import lib.interfaces.INavigationUI;
 
 
 public class AndroidNavigationUI implements INavigationUI {

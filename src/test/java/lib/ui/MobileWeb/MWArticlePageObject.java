@@ -2,7 +2,7 @@ package lib.ui.MobileWeb;
 
 import lib.Platform;
 import lib.ui.MainPageObject;
-import lib.ui.interfaces.IArticlePageObject;
+import lib.interfaces.IArticlePageObject;
 import org.openqa.selenium.WebElement;
 
 public class MWArticlePageObject implements IArticlePageObject {

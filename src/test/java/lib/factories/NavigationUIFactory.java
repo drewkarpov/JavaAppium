@@ -4,7 +4,7 @@ import lib.Platform;
 import lib.ui.MainPageObject;
 import lib.ui.MobileWeb.MWNavigationUI;
 import lib.ui.android.AndroidNavigationUI;
-import lib.ui.interfaces.INavigationUI;
+import lib.interfaces.INavigationUI;
 import lib.ui.ios.IOSNavigationUI;
 
 public class NavigationUIFactory {

@@ -2,7 +2,7 @@ package lib.ui.ios;
 
 import lib.Platform;
 import lib.ui.MainPageObject;
-import lib.ui.interfaces.INavigationUI;
+import lib.interfaces.INavigationUI;
 
 public class IOSNavigationUI implements INavigationUI {
 

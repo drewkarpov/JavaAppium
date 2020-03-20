@@ -4,9 +4,8 @@ import lib.Platform;
 import lib.ui.MainPageObject;
 import lib.ui.MobileWeb.MWSearchPageObject;
 import lib.ui.android.AndroidSearchPageObject;
-import lib.ui.interfaces.ISearchMenuPageObject;
+import lib.interfaces.ISearchMenuPageObject;
 import lib.ui.ios.IOSSearchPageObject;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class SearchPageObjectFactory {
 

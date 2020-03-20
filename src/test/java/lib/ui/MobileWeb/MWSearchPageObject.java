@@ -1,8 +1,7 @@
 package lib.ui.MobileWeb;
 
 import lib.ui.MainPageObject;
-import lib.ui.interfaces.ISearchMenuPageObject;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import lib.interfaces.ISearchMenuPageObject;
 
 public class MWSearchPageObject implements ISearchMenuPageObject {
 

@@ -1,4 +1,4 @@
-package lib.ui.interfaces;
+package lib.interfaces;
 
 public interface INavigationUI {
 

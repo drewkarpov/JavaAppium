@@ -1,8 +1,7 @@
 package lib.ui.ios;
 
 import lib.ui.MainPageObject;
-import lib.ui.interfaces.ISearchMenuPageObject;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import lib.interfaces.ISearchMenuPageObject;
 
 public class IOSSearchPageObject implements ISearchMenuPageObject {
 

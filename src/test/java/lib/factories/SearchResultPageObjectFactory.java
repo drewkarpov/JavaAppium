@@ -2,13 +2,9 @@ package lib.factories;
 
 import lib.Platform;
 import lib.ui.MainPageObject;
-import lib.ui.MobileWeb.MWSearchPageObject;
 import lib.ui.MobileWeb.MWSearchResultPageObject;
-import lib.ui.android.AndroidSearchPageObject;
 import lib.ui.android.AndroidSearchResultPageObject;
-import lib.ui.interfaces.ISearchMenuPageObject;
-import lib.ui.interfaces.ISearchResultPageObject;
-import lib.ui.ios.IOSSearchPageObject;
+import lib.interfaces.ISearchResultPageObject;
 import lib.ui.ios.IOSSearchResultPageObject;
 
 public class SearchResultPageObjectFactory {

@@ -1,7 +1,7 @@
 package lib.ui.MobileWeb;
 
 import lib.ui.MainPageObject;
-import lib.ui.interfaces.IMyListPageObject;
+import lib.interfaces.IMyListPageObject;
 
 public class MWMyListsPageObject implements IMyListPageObject {
     private String

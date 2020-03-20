@@ -1,7 +1,7 @@
 package lib.ui.MobileWeb;
 
 import lib.ui.MainPageObject;
-import lib.ui.interfaces.INavigationUI;
+import lib.interfaces.INavigationUI;
 
 public class MWNavigationUI implements INavigationUI {
 

@@ -1,7 +1,7 @@
 package lib.ui.android;
 
 import lib.ui.MainPageObject;
-import lib.ui.interfaces.IArticlePageObject;
+import lib.interfaces.IArticlePageObject;
 import org.openqa.selenium.WebElement;
 
 public class AndroidArticlePageObject implements IArticlePageObject {

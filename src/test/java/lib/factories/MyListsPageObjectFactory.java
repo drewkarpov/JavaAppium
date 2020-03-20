@@ -4,9 +4,8 @@ import lib.Platform;
 import lib.ui.MainPageObject;
 import lib.ui.MobileWeb.MWMyListsPageObject;
 import lib.ui.android.AndroidMyListsPageObject;
-import lib.ui.interfaces.IMyListPageObject;
+import lib.interfaces.IMyListPageObject;
 import lib.ui.ios.IOSMyListsPageObject;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class MyListsPageObjectFactory {
 

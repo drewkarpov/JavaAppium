@@ -1,7 +1,7 @@
 package lib.ui.ios;
 
 import lib.ui.MainPageObject;
-import lib.ui.interfaces.IArticlePageObject;
+import lib.interfaces.IArticlePageObject;
 import org.openqa.selenium.WebElement;
 
 public class IOSArticlePageObject implements IArticlePageObject {

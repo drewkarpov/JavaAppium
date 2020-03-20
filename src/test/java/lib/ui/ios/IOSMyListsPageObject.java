@@ -1,7 +1,7 @@
 package lib.ui.ios;
 
 import lib.ui.MainPageObject;
-import lib.ui.interfaces.IMyListPageObject;
+import lib.interfaces.IMyListPageObject;
 
 public class IOSMyListsPageObject implements IMyListPageObject {
 

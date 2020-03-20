@@ -2,7 +2,7 @@ package lib.ui.android;
 
 import lib.Platform;
 import lib.ui.MainPageObject;
-import lib.ui.interfaces.ISearchResultPageObject;
+import lib.interfaces.ISearchResultPageObject;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;

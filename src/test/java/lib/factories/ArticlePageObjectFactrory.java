@@ -4,7 +4,7 @@ import lib.Platform;
 import lib.ui.MainPageObject;
 import lib.ui.MobileWeb.MWArticlePageObject;
 import lib.ui.android.AndroidArticlePageObject;
-import lib.ui.interfaces.IArticlePageObject;
+import lib.interfaces.IArticlePageObject;
 import lib.ui.ios.IOSArticlePageObject;
 
 

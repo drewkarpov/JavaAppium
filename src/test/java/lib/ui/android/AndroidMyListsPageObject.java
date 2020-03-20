@@ -1,7 +1,7 @@
 package lib.ui.android;
 
 import lib.ui.MainPageObject;
-import lib.ui.interfaces.IMyListPageObject;
+import lib.interfaces.IMyListPageObject;
 
 public class AndroidMyListsPageObject implements IMyListPageObject {
 

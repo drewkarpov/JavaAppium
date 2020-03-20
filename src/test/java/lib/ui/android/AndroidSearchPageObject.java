@@ -1,8 +1,7 @@
 package lib.ui.android;
 
 import lib.ui.MainPageObject;
-import lib.ui.interfaces.ISearchMenuPageObject;
-import lib.ui.interfaces.ISearchResultPageObject;
+import lib.interfaces.ISearchMenuPageObject;
 
 public class AndroidSearchPageObject implements ISearchMenuPageObject {
     private String

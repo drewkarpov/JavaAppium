@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 import lib.factories.*;
 import lib.ui.MainPageObject;
 import lib.ui.MobileWeb.WelcomePageObject;
-import lib.ui.interfaces.*;
+import lib.interfaces.*;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
