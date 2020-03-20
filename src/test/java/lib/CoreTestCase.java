@@ -2,7 +2,10 @@ package lib;
 
 import io.appium.java_client.AppiumDriver;
 import junit.framework.TestCase;
+import lib.factories.NavigationUIFactory;
+import lib.ui.MainPageObject;
 import lib.ui.WelcomePageObject;
+import lib.ui.interfaces.INavigationUI;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -10,13 +13,16 @@ import java.time.Duration;
 
 
 public class CoreTestCase extends TestCase {
-    protected RemoteWebDriver driver;
 
+    protected RemoteWebDriver driver;
+    private INavigationUI navigation;
 
     @Override
     protected void setUp() throws Exception {
         super.setUp();
         driver = Platform.getInstance().getDriver();
+        MainPageObject mainPageObject = new MainPageObject(driver);
+        navigation = NavigationUIFactory.get(mainPageObject);
         this.rotateScreenPortait();
         this.skipWelcomePageForIOSApp();
         this.openWikiWebPageForMobileWeb();
@@ -69,6 +75,8 @@ public class CoreTestCase extends TestCase {
             welcomePage.clickSkip();
         }
     }
-
+    protected INavigationUI navigation(){
+        return navigation;
+    }
 
 }

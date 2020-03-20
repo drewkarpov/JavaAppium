@@ -1,16 +1,34 @@
 package lib.ui.ios;
 
-import io.appium.java_client.AppiumDriver;
-import lib.ui.NavigationUI;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import lib.Platform;
+import lib.ui.MainPageObject;
+import lib.ui.interfaces.INavigationUI;
 
-public class IOSNavigationUI extends NavigationUI {
+public class IOSNavigationUI implements INavigationUI {
 
-    static {
-        MY_LIST_BUTTON = "id:Saved";
+    private String MY_LIST_BUTTON = "id:Saved";
+    private MainPageObject main;
+
+    public IOSNavigationUI(MainPageObject mainPageObject) {
+        this.main = mainPageObject;
     }
 
-    public IOSNavigationUI(RemoteWebDriver driver) {
-        super(driver);
+    @Override
+    public void openNavigation() {
+        System.out.println("Method openNavigation() dose nothing to platform"+ Platform.getInstance().getPlatformVar());
+    }
+
+    @Override
+    public void clickMyLists() {
+        main.waitForElementPresent(
+                MY_LIST_BUTTON,
+                "Cannot find navigation button to my lists",
+                5
+        );
+        main.waitForElementAndClick(
+                MY_LIST_BUTTON,
+                "Cannot find navigation button to my lists",
+                5
+        );
     }
 }

@@ -7,6 +7,7 @@ import lib.factories.MyListsPageObjectFactory;
 import lib.factories.NavigationUIFactory;
 import lib.factories.SearchPageObjectFactory;
 import lib.ui.*;
+import lib.ui.interfaces.INavigationUI;
 import org.junit.Test;
 
 public class MyListsTests extends CoreTestCase {
@@ -43,9 +44,8 @@ public class MyListsTests extends CoreTestCase {
             articlePageObject.addArticlesToMySaved();
         }
         articlePageObject.closeArticle();
-        NavigationUI navigationUI = NavigationUIFactory.get(driver);
-        navigationUI.openNavigation();
-        navigationUI.clickMyLists();
+        navigation().openNavigation();
+        navigation().clickMyLists();
         MyListsPageObject myListsPageObject = MyListsPageObjectFactory.get(driver);
         if (Platform.getInstance().isAndroid()) {
             myListsPageObject.openFoderByName(nameOfFolder);
@@ -99,9 +99,8 @@ public class MyListsTests extends CoreTestCase {
             articlePageObject.addArticlesToMySaved();
         }
         articlePageObject.closeArticle();
-        NavigationUI navigationUI = NavigationUIFactory.get(driver);
-        navigationUI.openNavigation();
-        navigationUI.clickMyLists();
+        navigation().openNavigation();
+        navigation().clickMyLists();
         MyListsPageObject myListsPageObject = MyListsPageObjectFactory.get(driver);
         if (Platform.getInstance().isAndroid()) {
             myListsPageObject.openFoderByName(nameOfFolder);
