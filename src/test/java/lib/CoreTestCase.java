@@ -3,9 +3,13 @@ package lib;
 import io.appium.java_client.AppiumDriver;
 import junit.framework.TestCase;
 import lib.factories.NavigationUIFactory;
+import lib.factories.SearchPageObjectFactory;
+import lib.factories.SearchResultPageObjectFactory;
 import lib.ui.MainPageObject;
 import lib.ui.WelcomePageObject;
 import lib.ui.interfaces.INavigationUI;
+import lib.ui.interfaces.ISearchMenuPageObject;
+import lib.ui.interfaces.ISearchResultPageObject;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -16,6 +20,9 @@ public class CoreTestCase extends TestCase {
 
     protected RemoteWebDriver driver;
     private INavigationUI navigation;
+    private ISearchResultPageObject searchResult;
+    private ISearchMenuPageObject searchMenu;
+
 
     @Override
     protected void setUp() throws Exception {
@@ -23,6 +30,8 @@ public class CoreTestCase extends TestCase {
         driver = Platform.getInstance().getDriver();
         MainPageObject mainPageObject = new MainPageObject(driver);
         navigation = NavigationUIFactory.get(mainPageObject);
+        searchMenu = SearchPageObjectFactory.get(mainPageObject);
+        searchResult = SearchResultPageObjectFactory.get(mainPageObject);
         this.rotateScreenPortait();
         this.skipWelcomePageForIOSApp();
         this.openWikiWebPageForMobileWeb();
@@ -77,6 +86,13 @@ public class CoreTestCase extends TestCase {
     }
     protected INavigationUI navigation(){
         return navigation;
+    }
+
+    protected ISearchMenuPageObject searchPage(){
+        return searchMenu;
+    }
+    protected ISearchResultPageObject searchResultPage(){
+        return searchResult;
     }
 
 }

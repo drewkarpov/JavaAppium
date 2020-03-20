@@ -5,7 +5,6 @@ import lib.Platform;
 import lib.factories.ArticlePageObjectFactrory;
 import lib.factories.SearchPageObjectFactory;
 import lib.ui.ArticlePageObject;
-import lib.ui.SearchPageObject;
 import org.junit.Test;
 
 public class ChangeAppConditionTests extends CoreTestCase {
@@ -14,10 +13,9 @@ public class ChangeAppConditionTests extends CoreTestCase {
         if(Platform.getInstance().isMobileWeb()){
             return;
         }
-        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
-        searchPageObject.initSearchInput();
-        searchPageObject.typeSearchLine("Java");
-        searchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
+        searchPage().initSearchInput();
+        searchPage().typeSearchLine("Java");
+        searchResultPage().clickByArticleWithSubstring("Object-oriented programming language");
         ArticlePageObject articlePageObject = ArticlePageObjectFactrory.get(driver);
         articlePageObject.getArticleTitle();
         String titleBeforeRotation = articlePageObject.getArticleTitle();
@@ -39,12 +37,11 @@ public class ChangeAppConditionTests extends CoreTestCase {
         if(Platform.getInstance().isMobileWeb()){
             return;
         }
-        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
-        searchPageObject.initSearchInput();
-        searchPageObject.typeSearchLine("Java");
-        searchPageObject.waitForSearchResult("Object-oriented programming language");
+        searchPage().initSearchInput();
+        searchPage().typeSearchLine("Java");
+        searchResultPage().waitForSearchResult("Object-oriented programming language");
     //    this.backgroundApp(4);
-        searchPageObject.waitForSearchResult("Object-oriented programming language");
+        searchResultPage().waitForSearchResult("Object-oriented programming language");
     }
 
 }

@@ -1,23 +1,51 @@
 package lib.ui.MobileWeb;
 
-import lib.ui.SearchPageObject;
+import lib.ui.MainPageObject;
+import lib.ui.interfaces.ISearchMenuPageObject;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class MWSearchPageObject extends SearchPageObject {
-    public MWSearchPageObject(RemoteWebDriver driver) {
-        super(driver);
+public class MWSearchPageObject implements ISearchMenuPageObject {
+
+    private String
+        SEARCH_INIT_ELEMENT = "css:button#searchIcon",
+        SEARCH_INPUT = "css:form>input[type='search']",
+        SEARCH_CANCEL_BUTTON = "css:button.cancel";
+
+    private MainPageObject main;
+
+    public MWSearchPageObject ( MainPageObject mainPageObject){
+        this.main = mainPageObject;
+    }
+    @Override
+    public void initSearchInput() {
+        main.waitForElementPresent(SEARCH_INIT_ELEMENT, "Cannot find search Wikipedia input after clicking search init element", 5);
+        main.waitForElementAndClick(SEARCH_INIT_ELEMENT, "Cannot find search Wikipedia input after clicking search init element", 5);
     }
 
-    static {
-        SEARCH_INIT_ELEMENT = "css:button#searchIcon";
-        SEARCH_INPUT = "css:form>input[type='search']";
-        SEARCH_CANCEL_BUTTON = "css:button.cancel";
-        SEARCH_RESULT_WITH_SUBSTRING_TML = "xpath://div[contains(@class,'wikidata-description')][contains(text(),'{SUBSTRING}')]";
-        SEARCH_RESULT_ELEMENT = "css:ul.page-list>li.page-summary";
-        SEARCH_EMPTY_RESULT_ELEMENT = "css:p.without-results";
-        SEARCH_ITEM_TITLE = "xpath://*[contains(@class,'page-summary')]";
-        SEARCH_ITEM_TITLE_AND_DESCRIPTION_TML = "";
-        SEARCH_ITEM_TITLE_TEXT = "";
-        SEARCH_EMPTY_MESSAGE = "";
+    @Override
+    public void typeSearchLine(String searchLine) {
+        main.waitForElementAndClick(SEARCH_INPUT, "Cannot find and click search init element", 5);
+        main.waitForElementAndSendKeys(SEARCH_INPUT, searchLine, "Cannot find and type into search", 5);
+    }
+
+    @Override
+    public String getTextFromSearchInput() {
+        return main.waitForElementAndGetText(SEARCH_INPUT, "Cannot find search input field", 6);
+
+    }
+
+    @Override
+    public void waitForCancelButtonAppear() {
+        main.waitForElementPresent(SEARCH_CANCEL_BUTTON, "Cannot find cancel search button", 5);
+    }
+
+    @Override
+    public void waitForCancelButtonDisappear() {
+        main.waitForElementNotPresent(SEARCH_CANCEL_BUTTON, "Search cancel button is still present    ", 5);
+    }
+
+    @Override
+    public void clickCancelSearch() {
+        main.waitForElementAndClick(SEARCH_CANCEL_BUTTON, "Cannot find cancel button", 5);
     }
 }

@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47612bef-2ba0-4af0-b523-2254ae549f22" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="47612bef-2ba0-4af0-b523-2254ae549f22" name="Default Changelist" comment="add interface for navigation">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lib/factories/SearchResultPageObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lib/ui/MobileWeb/MWSearchResultPageObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidSearchResultPageObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lib/ui/interfaces/ISearchMenuPageObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lib/ui/interfaces/ISearchResultPageObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lib/ui/ios/IOSSearchResultPageObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ArticleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ArticleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ChangeAppConditionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ChangeAppConditionTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/MyListsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/MyListsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/SearchTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/CoreTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/factories/NavigationUIFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/factories/NavigationUIFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/MobileWeb/MWNavigationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/MobileWeb/MWNavigationUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/NavigationUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidNavigationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidNavigationUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/ios/IOSNavigationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/ios/IOSNavigationUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/factories/SearchPageObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/factories/SearchPageObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/MobileWeb/MWSearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/MobileWeb/MWSearchPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/SearchPageObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidSearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/android/AndroidSearchPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lib/ui/ios/IOSSearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lib/ui/ios/IOSSearchPageObject.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,12 +27,25 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QV1SFPOCiaZ69miBZjDYD29fu2" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lib.factories" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -157,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567844306220</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add interface for navigation">
+      <created>1584696580929</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584696580929</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,14 +204,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lesson 8 ex 17" />
-    <option name="LAST_COMMIT_MESSAGE" value="lesson 8 ex 17" />
+    <MESSAGE value="add interface for navigation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add interface for navigation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Tests/SearchTests.java</url>
-          <line>30</line>
+          <line>27</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

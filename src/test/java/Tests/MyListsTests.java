@@ -20,10 +20,9 @@ public class MyListsTests extends CoreTestCase {
 
     @Test
     public void testSaveFirstArticleToMyList() {
-        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
-        searchPageObject.initSearchInput();
-        searchPageObject.typeSearchLine("Java");
-        searchPageObject.clickByArticleWithSubstring("bject-oriented programming language");
+        searchPage().initSearchInput();
+        searchPage().typeSearchLine("Java");
+        searchResultPage().clickByArticleWithSubstring("bject-oriented programming language");
         ArticlePageObject articlePageObject = ArticlePageObjectFactrory.get(driver);
         articlePageObject.waitForTitleElement();
         String articleTitle = articlePageObject.getArticleTitle();
@@ -57,13 +56,12 @@ public class MyListsTests extends CoreTestCase {
     @Test
     public void testCompareTwoArticleTitleAndDelete() {
         String searchValue = "Java";
-        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
-        searchPageObject.initSearchInput();
-        searchPageObject.typeSearchLine(searchValue);
         String firstArticleDescription = "bject-oriented programming language";
         String secondArticleName = "JavaScript";
         String secondArticleDescription = "rogramming language";
-        searchPageObject.clickByArticleWithSubstring(firstArticleDescription);
+        searchPage().initSearchInput();
+        searchPage().typeSearchLine(searchValue);
+        searchResultPage().clickByArticleWithSubstring(firstArticleDescription);
         ArticlePageObject articlePageObject = ArticlePageObjectFactrory.get(driver);
         articlePageObject.waitForTitleElement();
         String firstArticleTitle = articlePageObject.getArticleTitle();
@@ -83,9 +81,9 @@ public class MyListsTests extends CoreTestCase {
            articlePageObject.addArticlesToMySaved();
         }
         articlePageObject.closeArticle();
-        searchPageObject.initSearchInput();
-        searchPageObject.typeSearchLine(searchValue);
-        searchPageObject.clickByArticleWithSubstring(secondArticleDescription);
+        searchPage().initSearchInput();
+        searchPage().typeSearchLine(searchValue);
+        searchResultPage().clickByArticleWithSubstring(secondArticleDescription);
         articlePageObject.waitForTitleElement();
         if (Platform.getInstance().isAndroid()) {
             articlePageObject.addArticleToMyList(nameOfFolder);

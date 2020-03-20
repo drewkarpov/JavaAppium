@@ -1,22 +1,22 @@
 package lib.factories;
 
-import io.appium.java_client.AppiumDriver;
 import lib.Platform;
+import lib.ui.MainPageObject;
 import lib.ui.MobileWeb.MWSearchPageObject;
-import lib.ui.SearchPageObject;
 import lib.ui.android.AndroidSearchPageObject;
+import lib.ui.interfaces.ISearchMenuPageObject;
 import lib.ui.ios.IOSSearchPageObject;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class SearchPageObjectFactory {
 
-    public static SearchPageObject get(RemoteWebDriver driver) {
+    public static ISearchMenuPageObject get(MainPageObject mainPageObject) {
         if (Platform.getInstance().isAndroid()) {
-            return new AndroidSearchPageObject(driver);
+            return new AndroidSearchPageObject(mainPageObject);
         } else if(Platform.getInstance().isIOS()){
-            return new IOSSearchPageObject(driver);
+            return new IOSSearchPageObject(mainPageObject);
         } else {
-            return  new MWSearchPageObject(driver);
+            return  new MWSearchPageObject(mainPageObject);
         }
     }
 }
