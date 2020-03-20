@@ -2,16 +2,10 @@ package lib;
 
 import io.appium.java_client.AppiumDriver;
 import junit.framework.TestCase;
-import lib.factories.ArticlePageObjectFactrory;
-import lib.factories.NavigationUIFactory;
-import lib.factories.SearchPageObjectFactory;
-import lib.factories.SearchResultPageObjectFactory;
+import lib.factories.*;
 import lib.ui.MainPageObject;
 import lib.ui.MobileWeb.WelcomePageObject;
-import lib.ui.interfaces.IArticlePageObject;
-import lib.ui.interfaces.INavigationUI;
-import lib.ui.interfaces.ISearchMenuPageObject;
-import lib.ui.interfaces.ISearchResultPageObject;
+import lib.ui.interfaces.*;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -25,6 +19,7 @@ public class CoreTestCase extends TestCase {
     private ISearchResultPageObject searchResult;
     private ISearchMenuPageObject searchMenu;
     private IArticlePageObject articlePage;
+    private IMyListPageObject myListPage;
 
 
     @Override
@@ -36,6 +31,7 @@ public class CoreTestCase extends TestCase {
         searchMenu = SearchPageObjectFactory.get(mainPageObject);
         searchResult = SearchResultPageObjectFactory.get(mainPageObject);
         articlePage = ArticlePageObjectFactrory.get(mainPageObject);
+        myListPage = MyListsPageObjectFactory.get(mainPageObject);
         this.rotateScreenPortait();
         this.skipWelcomePageForIOSApp();
         this.openWikiWebPageForMobileWeb();
@@ -98,5 +94,6 @@ public class CoreTestCase extends TestCase {
         return searchResult;
     }
     protected IArticlePageObject articlePage(){return articlePage;}
+    protected IMyListPageObject myListPage(){return myListPage;}
 
 }

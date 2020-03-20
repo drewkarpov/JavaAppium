@@ -41,11 +41,10 @@ public class MyListsTests extends CoreTestCase {
         articlePage().closeArticle();
         navigation().openNavigation();
         navigation().clickMyLists();
-        MyListsPageObject myListsPageObject = MyListsPageObjectFactory.get(driver);
         if (Platform.getInstance().isAndroid()) {
-            myListsPageObject.openFolderByName(nameOfFolder);
+            myListPage().openFolderByName(nameOfFolder);
         }
-        myListsPageObject.swipeByArticleToDelete(articleTitle);
+        myListPage().swipeByArticleToDelete(articleTitle);
     }
 
     //ex5
@@ -94,11 +93,10 @@ public class MyListsTests extends CoreTestCase {
         articlePage().closeArticle();
         navigation().openNavigation();
         navigation().clickMyLists();
-        MyListsPageObject myListsPageObject = MyListsPageObjectFactory.get(driver);
         if (Platform.getInstance().isAndroid()) {
-            myListsPageObject.openFolderByName(nameOfFolder);
+            myListPage().openFolderByName(nameOfFolder);
         }
-        myListsPageObject.swipeByArticleToDelete(firstArticleTitle);
-        myListsPageObject.assertArticleIsExist(secondArticleName);
+        myListPage().swipeByArticleToDelete(firstArticleTitle);
+        myListPage().assertArticleIsExist(secondArticleName);
     }
 }
